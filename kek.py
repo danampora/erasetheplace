@@ -36,8 +36,6 @@ print("Logged in with username {}".format(username))
 
 def place_pixel(ax, ay):
     new_color = 0
-    if ax % 2 == 0 and ay %2 == 0:
-        new_color = 1
 
     print("Checking pixel at {},{}. Target colour: {}".format(ax, ay, new_color))
 
