@@ -5,6 +5,8 @@
 // @description  Erase the place!
 // @author       mbarkhau, alex
 // @match        https://www.reddit.com/place*
+// @match        https://www.reddit.com/place?webview=true
+// @match        https://www.reddit.com/place?webview=true/*
 // @grant        none
 // ==/UserScript==
 
