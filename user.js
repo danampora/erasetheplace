@@ -3,8 +3,8 @@
 // @namespace    http://tampermonkey.net/
 // @version      0.1
 // @description  Erase the place!
-// @author       mbarkhau
-// @match        https://www.reddit.com/place?webview=true
+// @author       mbarkhau, alex
+// @match        https://www.reddit.com/place*
 // @grant        none
 // ==/UserScript==
  
