@@ -4,6 +4,8 @@
 // @version      0.1
 // @description  Erase the place!
 // @author       mbarkhau, alex
+// @updateurl    https://github.com/IncognitoJam/erasetheplace/blob/master/bot.user.js
+// @downloadurl  https://github.com/IncognitoJam/erasetheplace/blob/master/bot.user.js
 // @match        https://www.reddit.com/place*
 // @match        https://www.reddit.com/place?webview=true
 // @match        https://www.reddit.com/place?webview=true/*
