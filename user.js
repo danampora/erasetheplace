@@ -6,8 +6,8 @@
 // @author       mbarkhau alex
 // @match        https://www.reddit.com/place?webview=true*
 // @grant        none
-// @updateurl    https://github.com/IncognitoJam/erasetheplace/blob/master/defending.js
-// @downloadurl  https://github.com/IncognitoJam/erasetheplace/blob/master/defending.js
+// @updateurl    https://github.com/IncognitoJam/erasetheplace/blob/master/user.js
+// @downloadurl  https://github.com/IncognitoJam/erasetheplace/blob/master/user.js
 // ==/UserScript==
  
 (function() {
