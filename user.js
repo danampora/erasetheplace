@@ -1,18 +1,16 @@
-// ==UserScript==
+ ==UserScript==
 // @name         EraseBot
 // @namespace    http://tampermonkey.net/
 // @version      0.1
-// @description  Erase the place! Help to defend our core triangle
-// @author       mbarkhau alex
-// @match        https://www.reddit.com/place?webview=true*
+// @description  Erase the place!
+// @author       mbarkhau
+// @match        https://www.reddit.com/place?webview=true
 // @grant        none
-// @updateurl    https://github.com/IncognitoJam/erasetheplace/blob/master/user.js
-// @downloadurl  https://github.com/IncognitoJam/erasetheplace/blob/master/user.js
 // ==/UserScript==
-
+ 
 (function() {
     'use strict';
-
+ 
     var imageX = 474;
     var imageY = 402;
     var image = `xxxxxxxxxxxxxxxxxxxxxxbbxxxxxxxxxxxxxxxxxxxxxxxxxxx
@@ -35,22 +33,22 @@ xxxxxxbbwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwbbxxxxxxxxxxx
 xxxxxbbwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwbbxxxxxxxxxx
 xxxxbbwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwbbxxxxxxxxx
 xxxbbwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwbbxxxxxxxx
-xxbbwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwbbxxxxxxx
-xbbwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwbbxxxxxx
-bbwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwbbxxxxx
-bwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwbxxxxx
-bwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwbbxxx
-bwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwbbxx
-bwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwbbx
-bwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwbb
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`.split('\n');
-
+wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwbbxxxxxxx
+wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwbbxxxxxx
+wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwbbxxxxx
+wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwbxxxxx
+wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwbbxxx
+wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwbbxx
+wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwbbx
+wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwbb
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`.split('\n')
+ 
     var colors = {
         "w": 0,   // white
         "b": 5,  // black
         "x": -1,   // null
     };
-
+ 
     var image_data = [];
     for (var relY = 0; relY < image.length; relY++) {
         var row = image[relY];
@@ -63,13 +61,13 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`.split('\n');
             image_data.push(color);
         }
     }
-
-
+ 
+ 
     var p = r.place;
-
+ 
     r.placeModule("placePaintBot", function(loader) {
         var c = loader("canvasse");
-
+ 
         setInterval(function() {
             if (p.getCooldownTimeRemaining() > 200) {
                 return;
@@ -80,7 +78,7 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`.split('\n');
                 var y = image_data[j + 1];
                 var color = image_data[j + 2];
                 var currentColor = p.state[c.getIndexFromCoords(x, y)];
-
+ 
                 if (currentColor != color && color > -1) {
                     console.log("set color for", x, y, "old", currentColor, "new", color);
                     p.setColor(color);
