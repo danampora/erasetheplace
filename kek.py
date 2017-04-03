@@ -1,3 +1,7 @@
+##########################################
+####### THIS CODE IS DEPRECATED :( #######
+##########################################
+
 # Hit run at the top!
 # This program will not save your reddit login details.
 
