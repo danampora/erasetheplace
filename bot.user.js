@@ -49,7 +49,7 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`.split('\n');
 
     var colors = {
         "w": 0,   // white
-        "b": 5,  // black
+        "b": 3,  // black
         "x": -1,   // null
     };
 
